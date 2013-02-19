@@ -2,7 +2,7 @@ UserBadges Client - Node.js [![Dependency Status](https://gemnasium.com/danielgt
 ===========================
 A UserBadges.com Javascript API client for Node.js.
 
- * [UserBadges.com API Documentation](http://www.userbadges.com/api/documentation)
+ * [UserBadges.com API Documentation](http://www.userbadges.com/api-documentation)
 
 Installation
 ------------
@@ -19,18 +19,22 @@ The client is fairly simple to use, with just a few methods. Start by instantiat
 ```javascript
 var userbadges = require('userbadges');
 
+// Create a client with your API key
 var client = new userbadges.Client('my-secret-key');
+
+// Or create a client to hit a specific endpoint URL
+var client = new userbadges.Client('my-secret-key', 'http://foo.com')
 ```
 
 Then you can start making calls:
 
 ```javascript
-# Get a list of badges for the 'test' service sorted reverse alphabetically
+// Get a list of badges for the 'test' service sorted reverse alphabetically
 client.getBadges({service: 'test', sort: '-name'}, function (data) {
    console.log(data); 
 });
 
-# Update a user with badges
+// Update a user with badges
 client.putBadges({service: 'test', user: 'daniel', badges: ['test1', 'test2']}, function (data) {
    console.log(data); 
 });
@@ -38,6 +42,11 @@ client.putBadges({service: 'test', user: 'daniel', badges: ['test1', 'test2']}, 
 
 Reference
 ---------
+The userbadges library has one object available:
+
+### Client (key, [endpoint])
+Create a new client instance, optionally giving the endpoint URL to use.
+
 The following methods are available:
 
 ### Client.prototype.getBadges (options, callback)

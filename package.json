@@ -1,6 +1,6 @@
 {
   "name": "userbadges",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "UserBadges.com client for Node.js",
   "main": "userbadges.js",
   "scripts": {
@@ -19,12 +19,16 @@
     "userbadges",
     "user",
     "customer",
+    "client",
     "badge",
     "badges",
     "tag",
+    "tags",
     "tagging",
     "achievement",
-    "award"
+    "achievements",
+    "award",
+    "awards"
   ],
   "dependencies": {
     "restler": "2.x.x"
