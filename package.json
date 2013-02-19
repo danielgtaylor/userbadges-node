@@ -1,0 +1,36 @@
+{
+  "name": "userbadges",
+  "version": "1.0.0",
+  "description": "UserBadges.com client for Node.js",
+  "main": "userbadges.js",
+  "scripts": {
+    "pretest": "cake build",
+    "prepublish": "cake build",
+    "test": "cake test"
+  },
+  "repository": "",
+  "author": {
+    "name": "Daniel G. Taylor",
+    "email": "danielgtaylor@gmail.com",
+    "url": "http://programmer-art.org/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "userbadges",
+    "user",
+    "customer",
+    "badge",
+    "badges",
+    "tag",
+    "tagging",
+    "achievement",
+    "award"
+  ],
+  "dependencies": {
+    "restler": "2.x.x"
+  },
+  "devDependencies": {
+    "coffee-script": "1.x.x",
+    "mocha": "1.x.x"
+  }
+}
