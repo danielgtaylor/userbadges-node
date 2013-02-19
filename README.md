@@ -1,4 +1,4 @@
-UserBadges Client - Node.js [![Dependency Status](https://gemnasium.com/danielgtaylor/userbadges-node.png)](https://gemnasium.com/danielgtaylor/userbadges-node) [![Build Status](https://travis-ci.org/danielgtaylor/userbadges-node.png)](https://travis-ci.org/danielgtaylor/userbadges-node)
+UserBadges Client - Node.js [![Dependency Status](https://gemnasium.com/danielgtaylor/userbadges-node.png)](https://gemnasium.com/danielgtaylor/userbadges-node) [![Build Status](https://travis-ci.org/danielgtaylor/userbadges-node.png?branch=master)](https://travis-ci.org/danielgtaylor/userbadges-node)
 ===========================
 A UserBadges.com Javascript API client for Node.js.
 
