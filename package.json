@@ -1,6 +1,6 @@
 {
   "name": "userbadges",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "UserBadges.com client for Node.js",
   "main": "userbadges.js",
   "scripts": {

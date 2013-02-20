@@ -79,6 +79,28 @@ Get a list of users for a service or badge. The callback should take a single `d
  * `badge` Badge name; optional
  * `sort` Sort method; optional and one of `name`, `-name`, `count`, `-count`, `date`, `-date`
 
+Contributing
+------------
+Contributions are welcome - just fork the project and submit a pull request when you are ready!
+
+### Getting Started
+First, create a fork on GitHub. Then:
+
+```bash
+git clone ...
+cd userbadges-node
+npm install
+```
+
+### Unit Tests
+Before submitting a pull request, please add any relevant tests and run them via:
+
+```bash
+npm test
+```
+
+Changes that cause tests to fail will not be accepted.
+
 License
 -------
 Copyright (c) 2013 Daniel G. Taylor
