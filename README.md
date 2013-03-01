@@ -30,12 +30,15 @@ Then you can start making calls:
 
 ```javascript
 // Get a list of badges for the 'test' service sorted reverse alphabetically
-client.getBadges({service: 'test', sort: '-name'}, function (data) {
+client.getServiceBadges({service: 'test', sort: '-name'}, function (data) {
    console.log(data); 
 });
 
+// Add a badge type called test2
+client.addServiceBadges({service: 'test', badges: [{name: 'test2', description: 'Test description', myCustomField: 'foo'}]});
+
 // Update a user with badges
-client.putBadges({service: 'test', user: 'daniel', badges: ['test1', 'test2']}, function (data) {
+client.addUserBadges({service: 'test', user: 'daniel', badges: ['test1', 'test2']}, function (data) {
    console.log(data); 
 });
 ```
@@ -49,35 +52,45 @@ Create a new client instance, optionally giving the endpoint URL to use.
 
 The following methods are available:
 
-### Client.prototype.getBadges (options, callback)
-Get a list of badges for a service or user. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
+### Client.prototype.getServiceBadges (options, callback)
+Get a list of badges for a service. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
 
  * `service` Service name; required
- * `user` User name; optional
  * `sort` Sort method; optional and one of `name`, `-name`, `count`, `-count`, `date`, `-date`
 
-Note: the `count` sorts are only available when no `user` is specified, and the `date` sorts are only available when a `user` is specified.
-
-### Client.prototype.putBadges (options, callback)
-Update a user's list of badges. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
+### Client.prototype.addServiceBadges (options, callback)
+Add or update a service's list of badges. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
 
  * `service` Service name; required
- * `user` User name; required
- * `badges` Array of badge names to add; required
+ * `badges` Array of badge objects to add including custom fields; required
 
-### Client.prototype.delBadges (options, callback)
+### Client.prototype.delServiceBadges (options, callback)
 Delete badges from a user's list of badges. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
 
  * `service` Service name; required
- * `user` User name; required
  * `badges` Array of badge names to remove; required
 
 ### Client.prototype.getUsers (options, callback)
-Get a list of users for a service or badge. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
+Get a list of users for a service, optionally filtered by name or badges. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
 
  * `service` Service name; required
- * `badge` Badge name; optional
+ * `names` Only get uses with these names; optional, comma-seperated list
+ * `badges` Only get users with these badges; optional, comma-seperated list
  * `sort` Sort method; optional and one of `name`, `-name`, `count`, `-count`, `date`, `-date`
+
+ ### Client.prototype.addUserBadges (options, callback)
+ Add a list of badges to a user by name. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
+
+ * `service` Service name; required
+ * `user` User name; required
+ * `badges` Comma-seperated list of badge names to add; required
+
+ ### Client.prototype.delUserBadges (options, callback)
+Remove a list of badges from a user by name. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
+
+ * `service` Service name; required
+ * `user` User name; required
+ * `badges` Comma-seperated list of badge names to add; required
 
 Contributing
 ------------
