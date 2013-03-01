@@ -78,14 +78,14 @@ Get a list of users for a service, optionally filtered by name or badges. The ca
  * `badges` Only get users with these badges; optional, comma-seperated list
  * `sort` Sort method; optional and one of `name`, `-name`, `count`, `-count`, `date`, `-date`
 
- ### Client.prototype.addUserBadges (options, callback)
- Add a list of badges to a user by name. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
+### Client.prototype.addUserBadges (options, callback)
+Add a list of badges to a user by name. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
 
  * `service` Service name; required
  * `user` User name; required
  * `badges` Comma-seperated list of badge names to add; required
 
- ### Client.prototype.delUserBadges (options, callback)
+### Client.prototype.delUserBadges (options, callback)
 Remove a list of badges from a user by name. The callback should take a single `data` parameter, which is the returned JSON object from the API call. The `options` object can contain:
 
  * `service` Service name; required
